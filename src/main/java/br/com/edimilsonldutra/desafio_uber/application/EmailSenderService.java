@@ -2,6 +2,7 @@ package br.com.edimilsonldutra.desafio_uber.application;
 
 import br.com.edimilsonldutra.desafio_uber.adapters.EmailSenderGateway;
 import br.com.edimilsonldutra.desafio_uber.core.cases.EmailSenderUseCase;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 //Esta classe atua como um serviço que encapsula a lógica de envio de e-mails, implementando
@@ -13,6 +14,7 @@ public class EmailSenderService implements EmailSenderUseCase {
 
     private final EmailSenderGateway emailSenderGateway;
 
+    @Autowired
     public EmailSenderService(EmailSenderGateway emailSenderGateway) {
         this.emailSenderGateway = emailSenderGateway;
     }

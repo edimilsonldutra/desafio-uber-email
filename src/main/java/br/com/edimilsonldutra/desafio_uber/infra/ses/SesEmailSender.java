@@ -5,6 +5,7 @@ import br.com.edimilsonldutra.desafio_uber.core.exceptions.EmailServiceException
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.model.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,7 +13,7 @@ public class SesEmailSender implements EmailSenderGateway {
 
     private final AmazonSimpleEmailService sesClient;
 
-
+    @Autowired
     public SesEmailSender(AmazonSimpleEmailService sesClient) {
         this.sesClient = sesClient;
     }

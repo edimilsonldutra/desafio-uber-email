@@ -3,6 +3,7 @@ package br.com.edimilsonldutra.desafio_uber.controllers;
 import br.com.edimilsonldutra.desafio_uber.application.EmailSenderService;
 import br.com.edimilsonldutra.desafio_uber.core.EmailRequest;
 import br.com.edimilsonldutra.desafio_uber.core.exceptions.EmailServiceException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class EmailSenderController {
 
     private final EmailSenderService emailSenderService;
 
-
+    @Autowired
     public EmailSenderController(EmailSenderService emailSenderService) {
         this.emailSenderService = emailSenderService;
     }
